@@ -42,14 +42,6 @@ def create_artist():
     artists.append(artist)
     return jsonify({'artist': artist}), 201
 
-@app.errorhandler(404)
-def not_found(error):
-    return make_response(jsonify({'error': 'Not Found'}), 404)
-
-@app.errorhandler(400)
-def not_found(error):
-    return make_response(jsonify({'error': 'Bad Request'}), 400)
-
 @app.route('/api/music/artists/<int:artist_id>', methods=['PUT'])
 def update_artist(artist_id):
     artist = [artist for artist in artists if artist['id'] == artist_id]
@@ -72,3 +64,11 @@ def delete_artist(artist_id):
         abort(404)
     artists.remove(artist[0])
     return jsonify({'result': True})
+
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not Found'}), 404)
+
+@app.errorhandler(400)
+def bad_request(error):
+    return make_response(jsonify({'error': 'Bad Request'}), 400)
