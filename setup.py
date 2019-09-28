@@ -7,6 +7,7 @@ setup(
     install_requires=[
         'flask',
         'python-dotenv',
-        'mongoengine'
+        'mongoengine',
+        'dnspython'
     ],
 )
