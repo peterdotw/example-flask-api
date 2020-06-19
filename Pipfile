@@ -11,6 +11,7 @@ flask = "*"
 python-dotenv = "*"
 mongoengine = "*"
 dnspython = "*"
+flask-mongoengine = "*"
 
 [requires]
 python_version = "3.7"
