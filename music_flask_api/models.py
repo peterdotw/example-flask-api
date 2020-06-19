@@ -1,5 +1,5 @@
-import mongoengine as me
 import datetime
+import mongoengine as me
 
 
 class Artist(me.Document):

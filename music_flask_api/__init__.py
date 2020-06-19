@@ -1,8 +1,8 @@
-from music_flask_api.routes import api
+import os
 from flask import Flask
 from flask_mongoengine import MongoEngine
-import os
 from dotenv import load_dotenv
+from music_flask_api.routes import api
 
 
 def create_app():

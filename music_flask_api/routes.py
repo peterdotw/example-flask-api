@@ -1,5 +1,5 @@
-from flask import jsonify, abort, make_response, request, Blueprint
 import os
+from flask import jsonify, abort, make_response, request, Blueprint
 from music_flask_api.models import Artist
 
 api = Blueprint('api', __name__)
