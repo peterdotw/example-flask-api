@@ -1,14 +1,15 @@
-from mongoengine import *
+import mongoengine as me
 import datetime
 
-class Artists(Document):
-    name = StringField(required=True)
-    description = StringField(max_length=50)
-    createdAt = DateTimeField()
-    updatedAt = DateTimeField(default=datetime.datetime.now)
+
+class Artist(me.Document):
+    name = me.StringField(required=True)
+    description = me.StringField(max_length=50)
+    createdAt = me.DateTimeField()
+    updatedAt = me.DateTimeField(default=datetime.datetime.now)
 
     def save(self, *args, **kwargs):
         if not self.createdAt:
             self.createdAt = datetime.datetime.now()
         self.updatedAt = datetime.datetime.now()
-        return super(Artists, self).save(*args, **kwargs)
+        return super(Artist, self).save(*args, **kwargs)
